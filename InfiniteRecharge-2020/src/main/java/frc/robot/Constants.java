@@ -22,5 +22,7 @@ public final class Constants
     public static ColorThreshold blueThreshold = new ColorThreshold(0.1, 0.2, 0.3);
     public static ColorThreshold yellowThreshold = new ColorThreshold(0.3, 0.5, 0.1);
 
-
+    //Port for color wheel spinner
+    public static final int COLOR_WHEEL_MOTOR = 5; 
+    public static final int POV = 
 }
