@@ -10,31 +10,56 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class TurnWheelToColor extends CommandBase {
+  private String targetColor;
+  private string colorInput;
   /**
    * Creates a new TurnWheelToColor.
    */
-  public TurnWheelToColor() {
+  Colorwheel wheel;
+  ColorSensor sensor;
+
+  public TurnWheelToColor() { 
+  wheel = new Colorwheel();
+  sensor = new ColorSensor();
+  addRequirements(wheel);
+  addRequirements(sensor);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    targetColor = DriverStation.getInstance().getGameSpecificMessage();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
+  public void execute() 
+  {
+    wheel.turnWheel();
+    colorInput = sensor.matchColor(sensor.getColor);
+    
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
+  public void end(boolean interrupted) 
+  {
+    wheel.stopWheel();
   }
 
   // Returns true when the command should end.
   @Override
-  public boolean isFinished() {
-    return false;
+  public boolean isFinished()
+  {
+    if(targetColor == colorInput);
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }  
   }
 }

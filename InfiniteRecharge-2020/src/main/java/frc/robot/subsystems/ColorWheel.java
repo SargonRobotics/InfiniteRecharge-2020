@@ -14,15 +14,19 @@ public class ColorWheel extends SubsystemBase {
     public ColorWheel() 
     {
         colorWheelMotor = new Spark(Constants.COLOR_WHEEL_MOTOR);
-        wheelEncoder = new Encoder(COLOR_WHEEL_ENCODER_A, COLOR_WHEEL_ENCODER_B)
+        wheelEncoder = new Encoder(Constants.COLOR_WHEEL_ENCODER_A, Constants.COLOR_WHEEL_ENCODER_B);
     }
 
-    public void TurnWheel()
+    public int getRotations(){
+        return wheelEncoder.getRaw();
+    }
+
+    public void turnWheel()
     {
         colorWheelMotor.set(1);
     }
 
-    public void StopWheel()
+    public void stopWheel()
     {
         colorWheelMotor.set(0);
     }

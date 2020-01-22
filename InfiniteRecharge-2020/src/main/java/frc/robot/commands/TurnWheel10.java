@@ -8,33 +8,46 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.ColorWheel;
 
 public class TurnWheel10 extends CommandBase {
+  private static final int maxRotations = 0;
   /**
    * Creates a new TurnWheel10.
    */
+  ColorWheel colorWheel;
   public TurnWheel10() {
     // Use addRequirements() here to declare subsystem dependencies.
+    colorWheel = new ColorWheel();
+    addRequirements(colorWheel);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
+  public void initialize() 
+  {
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
+  public void execute() 
+  {
+    colorWheel.turnWheel();
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
+  public void end(boolean interrupted) 
+  {
+    colorWheel.stopWheel();
+
   }
 
   // Returns true when the command should end.
   @Override
-  public boolean isFinished() {
-    return false;
+  public boolean isFinished() 
+  {
+    return (colorWheel.getRotations() == maxRotations);
   }
 }
