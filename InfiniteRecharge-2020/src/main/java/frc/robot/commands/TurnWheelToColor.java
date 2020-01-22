@@ -7,19 +7,22 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.ColorWheel;
+import frc.robot.subsystems.ColorSensor;
 
 public class TurnWheelToColor extends CommandBase {
   private String targetColor;
-  private string colorInput;
+  private String colorInput;
   /**
    * Creates a new TurnWheelToColor.
    */
-  Colorwheel wheel;
+  ColorWheel wheel;
   ColorSensor sensor;
 
   public TurnWheelToColor() { 
-  wheel = new Colorwheel();
+  wheel = new ColorWheel();
   sensor = new ColorSensor();
   addRequirements(wheel);
   addRequirements(sensor);
@@ -37,7 +40,7 @@ public class TurnWheelToColor extends CommandBase {
   public void execute() 
   {
     wheel.turnWheel();
-    colorInput = sensor.matchColor(sensor.getColor);
+    colorInput = sensor.matchColor(sensor.getColor());
     
 
   }
@@ -53,13 +56,13 @@ public class TurnWheelToColor extends CommandBase {
   @Override
   public boolean isFinished()
   {
-    if(targetColor == colorInput);
+    if(targetColor == colorInput)
     {
       return true;
     }
     else
     {
       return false;
-    }  
+    }
   }
 }
