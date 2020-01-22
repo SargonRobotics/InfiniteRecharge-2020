@@ -26,6 +26,8 @@ public class RobotContainer {
 
 
   Joystick joystick;
+  JoystickButton turnButton;
+  JoystickButton sensorButton; 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -43,6 +45,13 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     joystick = new Joystick(Constants.JOYSTICk);
+    turnButton = new JoystickButton(Constants.COLOR_BUTTON);
+    sensorButton = new JoystickButton(Constants.SENSOR_BUTTON);
+
+
+    turnButton.whenPressed(new TurnWheel10);
+    sensorButton.whenPressed(new TurnWheelToColor);
+
 
   }
 
