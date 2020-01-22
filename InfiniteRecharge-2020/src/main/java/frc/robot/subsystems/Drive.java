@@ -31,7 +31,7 @@ public class Drive extends SubsystemBase {
     driveTrain.driveCartesian(forVal, sideVal, rotVal);
   }
 
-  public void drive(){
+  public void stop(){
     driveTrain.driveCartesian(0, 0, 0);
   }
 
