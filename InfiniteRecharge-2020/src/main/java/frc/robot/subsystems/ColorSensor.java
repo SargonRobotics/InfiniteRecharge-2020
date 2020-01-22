@@ -33,25 +33,30 @@ public class ColorSensor extends SubsystemBase
     SmartDashboard.putNumber("Proximity", proximity);
   }
 
+  public Color getColor()
+  {
+    return m_colorSensor.getColor();
+  }
+
   public String matchColor(final Color target)
   {
     String colorName = "Unknown";
 
     if(Constants.redThreshold.inThreshhold(target.red, target.green, target.blue)) // Check if color is above a threshold
     {
-      colorName = "Red";
+      colorName = "R";
     }
     else if(Constants.greenThreshold.inThreshhold(target.red, target.green, target.blue))
     {
-      colorName = "Green";
+      colorName = "G";
     }
     else if(Constants.blueThreshold.inThreshhold(target.red, target.green, target.blue))
     {
-      colorName = "Blue";
+      colorName = "B";
     }
     else if(Constants.yellowThreshold.inThreshhold(target.red, target.green, target.blue))
     {
-      colorName = "Yellow";
+      colorName = "Y";
     }
 
     return colorName;
