@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -8,12 +9,12 @@ import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.Constants;
 
 public class ColorWheel extends SubsystemBase {
-    Spark colorWheelMotor;
+    Victor colorWheelMotor;
     Encoder wheelEncoder;
 
     public ColorWheel() 
     {
-        colorWheelMotor = new Spark(Constants.COLOR_WHEEL_MOTOR);
+        colorWheelMotor = new Victor(Constants.COLOR_WHEEL_MOTOR);
         wheelEncoder = new Encoder(Constants.COLOR_WHEEL_ENCODER_A, Constants.COLOR_WHEEL_ENCODER_B);
     }
 
