@@ -33,8 +33,8 @@ public final class Constants
 
     //Port for color wheel spinner
     public static final int COLOR_WHEEL_MOTOR = 5; 
-    public static final int COLOR_WHEEL_ENCODER_A = 6;
-    public static final int COLOR_WHEEL_ENCODER_B = 7;
+    public static final int COLOR_WHEEL_ENCODER_A = 0;
+    public static final int COLOR_WHEEL_ENCODER_B = 1;
 
     
 
