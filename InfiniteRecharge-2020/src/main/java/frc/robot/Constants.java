@@ -20,11 +20,11 @@ public final class Constants
     // Motor ports
     public static final int FRONT_LEFT_MOTOR = 1, FRONT_RIGHT_MOTOR = 2, BACK_LEFT_MOTOR = 3, BACK_RIGHT_MOTOR = 4;
     // joystick and axis ports
-    public static final int JOYSTICK = 5, X_AXIS = 0, Y_AXIS = 1, Z_AXIS = 4;
+    public static final int JOYSTICK = 0, X_AXIS = 0, Y_AXIS = 1, Z_AXIS = 4;
     
     //Button Ports
-    public static final int TURN_BUTTON = 0;
-    public static final int SENSOR_BUTTON = 9;
+    public static final int TURN_BUTTON = 3;
+    public static final int SENSOR_BUTTON = 2;
 
     public static ColorThreshold redThreshold = new ColorThreshold(0.45, 0.3, 0.1);
     public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .55, 0.2);

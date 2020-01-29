@@ -9,7 +9,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.subsystems.ColorWheel;
+import frc.robot.Robot;
 import frc.robot.subsystems.ColorSensor;
 
 public class TurnWheelToColor extends CommandBase {
@@ -18,21 +20,26 @@ public class TurnWheelToColor extends CommandBase {
   /**
    * Creates a new TurnWheelToColor.
    */
-  ColorWheel wheel;
-  ColorSensor sensor;
+  private final ColorWheel wheel;
+  private final ColorSensor sensor;
 
-  public TurnWheelToColor() { 
-  wheel = new ColorWheel();
-  sensor = new ColorSensor();
-  addRequirements(wheel);
-  addRequirements(sensor);
+  public TurnWheelToColor(ColorWheel S_wheel, ColorSensor S_sensor)
+  { 
+    wheel = S_wheel;
+    sensor = S_sensor;
+
+    addRequirements(wheel);
+    addRequirements(sensor);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    targetColor = DriverStation.getInstance().getGameSpecificMessage();
+    //targetColor = DriverStation.getInstance().getGameSpecificMessage();
+    targetColor = "R";
+    wheel.resetRotations();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -56,6 +63,7 @@ public class TurnWheelToColor extends CommandBase {
   @Override
   public boolean isFinished()
   {
+    
     if(targetColor == colorInput)
     {
       return true;
@@ -65,4 +73,5 @@ public class TurnWheelToColor extends CommandBase {
       return false;
     }
   }
+  
 }

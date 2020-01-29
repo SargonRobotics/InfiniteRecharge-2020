@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.TurnWheel10;
 import frc.robot.commands.TurnWheelToColor;
+import frc.robot.subsystems.ColorSensor;
+import frc.robot.subsystems.ColorWheel;
 import frc.robot.subsystems.Drive;
 
 
@@ -31,6 +33,9 @@ public class RobotContainer {
   Joystick joystick;
   JoystickButton turnButton;
   JoystickButton sensorButton; 
+
+  private final ColorWheel m_colorwheel = new ColorWheel();
+  private final ColorSensor m_colorsensor = new ColorSensor();
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -52,8 +57,8 @@ public class RobotContainer {
     sensorButton = new JoystickButton(joystick, Constants.SENSOR_BUTTON);
 
 
-    turnButton.whenPressed(new TurnWheel10());
-    sensorButton.whenPressed(new TurnWheelToColor());
+    turnButton.whenPressed(new TurnWheel10(m_colorwheel));
+    sensorButton.whenPressed(new TurnWheelToColor(m_colorwheel, m_colorsensor));
 
 
   }
