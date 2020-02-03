@@ -31,6 +31,8 @@ public final class Constants
     //Button Ports
     public static final int TURN_BUTTON = 3;
     public static final int SENSOR_BUTTON = 2;
+    public static final int SHOOT_BUTTON = 1;
+    public static final int VAC_BUTTON = 4;
 
     public static ColorThreshold redThreshold = new ColorThreshold(0.45, 0.3, 0.1);
     public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .55, 0.2);
@@ -44,6 +46,6 @@ public final class Constants
 
     public static final int BALL_VAC_MOTOR = 5;
     public static final int SHOOTER_MOTOR = 6;
-
+    
     
 }

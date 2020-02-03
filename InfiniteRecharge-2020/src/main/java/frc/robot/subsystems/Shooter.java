@@ -13,8 +13,17 @@ public class Shooter extends SubsystemBase {
         shooterMotor = new Spark(Constants.SHOOTER_MOTOR);
     }
 
-    public void toggleVac(boolean status){
-
-
+    public void StartVac(){
+        ballVac.set(1);
     }
+    public void StopVac(){
+        ballVac.set(0);
+    }
+    public void StartShoot(){
+        shooterMotor.set(1);
+    }
+    public void StopShoot(){
+        shooterMotor.set(0);
+    }
+
 }
