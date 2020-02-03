@@ -52,6 +52,6 @@ public class TurnWheel10 extends CommandBase {
   @Override
   public boolean isFinished() 
   {
-    return (colorWheel.getRotations() == maxRotations);
+    return (rotations >= maxRotations);
   }
 }
