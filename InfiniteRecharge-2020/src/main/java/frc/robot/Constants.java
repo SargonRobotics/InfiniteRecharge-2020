@@ -44,7 +44,7 @@ public final class Constants
     public static final int COLOR_WHEEL_ENCODER_A = 0;
     public static final int COLOR_WHEEL_ENCODER_B = 1;
 
-    public static final int BALL_VAC_MOTOR = 5;
+    public static final int BALL_VAC_MOTOR = 7;
     public static final int SHOOTER_MOTOR = 6;
     
     
