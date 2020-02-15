@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.TurnWheel10;
 import frc.robot.commands.TurnWheelToColor;
+import frc.robot.commands.DeployBallVac;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.VacToggle;
 import frc.robot.subsystems.ColorSensor;
@@ -38,6 +39,7 @@ public class RobotContainer {
   JoystickButton sensorButton; 
   JoystickButton shootButton;
   JoystickButton vacButton;
+  JoystickButton pistonButton;
 
   private final ColorWheel m_colorwheel = new ColorWheel();
   private final ColorSensor m_colorsensor = new ColorSensor();
@@ -63,11 +65,13 @@ public class RobotContainer {
     sensorButton = new JoystickButton(joystick, Constants.SENSOR_BUTTON);
     shootButton = new JoystickButton(joystick, Constants.SHOOT_BUTTON);
     vacButton = new JoystickButton(joystick, Constants.VAC_BUTTON);
+    pistonButton = new JoystickButton(joystick, Constants.PISTON_BUTTON);
 
     turnButton.whenPressed(new TurnWheel10(m_colorwheel));
     sensorButton.whenPressed(new TurnWheelToColor(m_colorwheel, m_colorsensor));
     shootButton.toggleWhenPressed(new Shoot(m_shooter));
     vacButton.toggleWhenPressed(new VacToggle(m_shooter));
+    pistonButton.whenPressed(new DeployBallVac(m_shooter));
   }
 
 

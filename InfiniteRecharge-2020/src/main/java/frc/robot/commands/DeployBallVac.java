@@ -7,55 +7,43 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.ColorWheel;
+import frc.robot.subsystems.Shooter;
+
+public class DeployBallVac extends CommandBase {
+  private final Shooter shooter;
+  private static boolean finished;
 
 
-public class TurnWheel10 extends CommandBase {
-  private static final int maxRotations = 5;
-  /**
-   * Creates a new TurnWheel10.
-   */
-  private final ColorWheel colorWheel;
-  private double rotations;
-  private PowerDistributionPanel pdp;
-  
-  public TurnWheel10(ColorWheel S_wheel) {
+  public DeployBallVac(Shooter base) 
+  {
+    shooter = base;
+    addRequirements(shooter);
     // Use addRequirements() here to declare subsystem dependencies.
-    colorWheel = S_wheel;
-    pdp = new PowerDistributionPanel();
-    addRequirements(colorWheel);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() 
-  {
-    colorWheel.resetRotations();
-    pdp.clearStickyFaults();
+  public void initialize() {
+    finished = false;
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() 
   {
-    colorWheel.turnWheel();
-    rotations = colorWheel.getRotations();
-    
+    shooter.togglePistons();
+    finished = true;
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) 
-  {
-    colorWheel.stopWheel();
+  public void end(boolean interrupted) {
   }
 
   // Returns true when the command should end.
   @Override
-  public boolean isFinished() 
-  {
-    return (rotations >= maxRotations);
+  public boolean isFinished() {
+    return finished;
   }
 }
