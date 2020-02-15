@@ -9,11 +9,12 @@
 import json
 import time
 import sys
-
 from cscore import CameraServer, VideoSource, UsbCamera, MjpegServer
 from networktables import NetworkTablesInstance, NetworkTables
 import ntcore
 import vision
+
+from vision.py import processNextFrame
 
 #   JSON format:
 #   {
@@ -249,6 +250,9 @@ if __name__ == "__main__":
 
     # loop forever
     while True:
+        processNextFrame(distanceToTarget, centerOffset, maskedFrame, frame)
+        
+        
         #distanceToTarget, centerOffset, processedFrame, unprocessedFrame = vision.processNextFrame()
 
         #visionTable.putNumber("targetDistance",distanceToTarget)

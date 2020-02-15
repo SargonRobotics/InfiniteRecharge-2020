@@ -20,7 +20,7 @@ def startCapture(cameraPath, width, height):
   cameraHeight = height
  
 # Read until video is completed
-def processNextFrame():
+def processNextFrame(distanceToTarget, centerOffset, maskedFrame, frame):
   global cap
 
   # Capture frame-by-frame
