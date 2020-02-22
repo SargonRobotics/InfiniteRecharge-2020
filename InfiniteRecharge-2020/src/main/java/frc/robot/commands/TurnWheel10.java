@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ColorWheel;
 
 public class TurnWheel10 extends CommandBase {
-  private static final int maxRotations = 5;
+  private static final int maxRotations = -3;
   /**
    * Creates a new TurnWheel10.
    */
@@ -52,6 +52,6 @@ public class TurnWheel10 extends CommandBase {
   @Override
   public boolean isFinished() 
   {
-    return (rotations >= maxRotations);
+    return (rotations <= maxRotations);
   }
 }

@@ -37,7 +37,7 @@ public class TurnWheelToColor extends CommandBase {
   @Override
   public void initialize() {
     //targetColor = DriverStation.getInstance().getGameSpecificMessage();
-    targetColor = "R";
+    targetColor = "Y";
     wheel.resetRotations();
     
   }

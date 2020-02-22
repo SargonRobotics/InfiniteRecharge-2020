@@ -17,7 +17,7 @@ public class ColorWheel extends SubsystemBase {
     {
         colorWheelMotor = new Victor(Constants.COLOR_WHEEL_MOTOR);
         wheelEncoder = new Encoder(Constants.COLOR_WHEEL_ENCODER_A, Constants.COLOR_WHEEL_ENCODER_B);
-        wheelEncoder.setDistancePerPulse(-1./500.);
+        wheelEncoder.setDistancePerPulse(-1./3000.);
     }
 
     public double getRotations(){

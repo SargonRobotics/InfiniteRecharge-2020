@@ -35,7 +35,8 @@ public final class Constants
     public static final int VAC_BUTTON = 4;
 
     public static ColorThreshold redThreshold = new ColorThreshold(0.45, 0.3, 0.1);
-    public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .55, 0.2);
+    //public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .55, 0.2); ACTUAL THRESHOLD REPLACE FOR COMP
+    public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .50, 0.2);
     public static ColorThreshold blueThreshold = new ColorThreshold(0.1, 0.2, 0.3);
     public static ColorThreshold yellowThreshold = new ColorThreshold(0.3, 0.5, 0.1);
 
