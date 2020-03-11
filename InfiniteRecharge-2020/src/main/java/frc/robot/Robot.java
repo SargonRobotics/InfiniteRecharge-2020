@@ -103,7 +103,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    drive.drive(m_robotContainer.joystick.getRawAxis(Constants.Y_AXIS), m_robotContainer.joystick.getRawAxis(Constants.X_AXIS), m_robotContainer.joystick.getRawAxis(Constants.Z_AXIS));
+    drive.drive( m_robotContainer.joystick.getRawAxis(Constants.X_AXIS), m_robotContainer.joystick.getRawAxis(Constants.Z_AXIS));
   }
 
   @Override

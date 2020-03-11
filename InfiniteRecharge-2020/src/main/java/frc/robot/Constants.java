@@ -18,7 +18,7 @@ package frc.robot;
 public final class Constants 
 {
     // Motor ports
-    public static final int FRONT_LEFT_MOTOR = 1, FRONT_RIGHT_MOTOR = 2, BACK_LEFT_MOTOR = 3, BACK_RIGHT_MOTOR = 4;
+    public static final int FRONT_LEFT_MOTOR = 1, FRONT_RIGHT_MOTOR = 2;
     // joystick and axis ports
     public static final int JOYSTICK = 5, X_AXIS = 0, Y_AXIS = 1, Z_AXIS = 4;
 

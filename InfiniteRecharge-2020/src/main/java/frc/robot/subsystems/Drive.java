@@ -8,31 +8,32 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Drive extends SubsystemBase {
   Spark frontRight, backRight, frontLeft, backLeft;
-  MecanumDrive driveTrain; 
+  DifferentialDrive driveTrain; 
   /**
    * Creates a new Drive.
    */
   public Drive() {
     frontRight = new Spark(Constants.FRONT_RIGHT_MOTOR);
-    backRight = new Spark(Constants.BACK_RIGHT_MOTOR);
+    
     frontLeft = new Spark(Constants.FRONT_LEFT_MOTOR);
-    backLeft = new Spark(Constants.BACK_LEFT_MOTOR);
+    
 
-    driveTrain = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
+    driveTrain = new DifferentialDrive(frontLeft, frontRight);
   }
 
-  public void drive(double forVal, double sideVal, double rotVal){
-    driveTrain.driveCartesian(forVal, sideVal, rotVal);
+  public void drive(double xSpeed, double zRotation){
+    driveTrain.arcadeDrive(xSpeed, zRotation);
   }
-
+  
   public void stop(){
-    driveTrain.driveCartesian(0, 0, 0);
+    driveTrain.arcadeDrive(0, 0);
   }
 
   @Override

@@ -42,7 +42,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
 
-    joystick = new Joystick(Constants.JOYSTICk);
+    joystick = new Joystick(Constants.JOYSTICK);
 
   }
 
