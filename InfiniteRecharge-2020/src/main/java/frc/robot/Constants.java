@@ -17,7 +17,10 @@ package frc.robot;
  */
 public final class Constants 
 {
-    public static ColorThreshold redThreshold = new ColorThreshold(0.45, 0.3, 0.1);
+    public static final int COLOR_WHEEL_ENCODER_A = 1; 
+    public static final int COLOR_WHEEL_MOTOR = 0;
+	public static final int COLOR_WHEEL_ENCODER_B = 0;
+	public static ColorThreshold redThreshold = new ColorThreshold(0.45, 0.3, 0.1);
     public static ColorThreshold greenThreshold = new ColorThreshold(0.2, .55, 0.2);
     public static ColorThreshold blueThreshold = new ColorThreshold(0.1, 0.2, 0.3);
     public static ColorThreshold yellowThreshold = new ColorThreshold(0.3, 0.5, 0.1);

@@ -56,4 +56,8 @@ public class ColorSensor extends SubsystemBase
 
     return colorName;
   }
+
+public Color getColor() {
+	return null;
+}
 }
