@@ -10,9 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
-import frc.robot.subsystems.ColorWheel;
 import frc.robot.Robot;
 import frc.robot.subsystems.ColorSensor;
+import frc.robot.subsystems.ColorWheel;
 
 public class TurnWheelToColor extends CommandBase {
   private String targetColor;
